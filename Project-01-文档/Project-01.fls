@@ -1,0 +1,11 @@
+PWD E:/学习/工程师阶段/课程/EM11-泛函分析/Project-01-数值积分/Project-01-文档
+INPUT d:/Program Files/texlive/2017/texmf.cnf
+INPUT d:/Program Files/texlive/2017/texmf-dist/web2c/texmf.cnf
+INPUT d:/Program Files/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT ./Project-01.tex
+OUTPUT Project-01.log
+INPUT d:/Program Files/texlive/2017/texmf-dist/tex/latex/ctex/ctexart.cls
+INPUT d:/Program Files/texlive/2017/texmf-dist/tex/latex/ctex/ctexart.cls
+INPUT d:/Program Files/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3.sty
+INPUT d:/Program Files/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3.sty
+INPUT d:/Program Files/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3-code.tex
