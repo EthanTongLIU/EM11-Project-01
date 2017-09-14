@@ -1,12 +1,5 @@
-\contentsline {part}{第一部分\hspace {1em}算法原理}{3}{part.1}
-\contentsline {section}{\numberline {1}用\emph {拉格朗日插值多项式}来逼近被积函数}{3}{section.1}
-\contentsline {section}{\numberline {2}构造插值求积公式}{4}{section.2}
-\contentsline {section}{\numberline {3} 从 $ Newton-Cotes $ 积分到 $ Gauss $ 积分 }{4}{section.3}
-\contentsline {subsection}{\numberline {3.1}Newton-Cotes\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 积分}{5}{subsection.3.1}
-\contentsline {subparagraph}{截断误差}{5}{subparagraph*.2}
-\contentsline {subparagraph}{代数精度}{5}{subparagraph*.3}
-\contentsline {subsection}{\numberline {3.2}高斯积分}{5}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}高斯-勒让德求积公式}{5}{subsubsection.3.2.1}
-\contentsline {subparagraph}{勒让德多项式的性质}{5}{subparagraph*.4}
-\contentsline {part}{第二部分\hspace {1em}算法构建}{6}{part.2}
-\contentsline {section}{Appendices}{6}{section*.5}
+\contentsline {part}{第一部分\hspace {1em}算法原理}{2}{part.1}
+\contentsline {section}{\numberline {1}用\emph {拉格朗日插值多项式}来逼近被积函数}{2}{section.1}
+\contentsline {section}{\numberline {2}构造插值求积公式}{2}{section.2}
+\contentsline {section}{\numberline {3}从\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Newton-Cotes\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 积分到\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Gauss\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 积分}{3}{section.3}
+\contentsline {part}{第二部分\hspace {1em}算法构建}{3}{part.2}
