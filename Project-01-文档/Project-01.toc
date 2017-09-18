@@ -1,5 +1,0 @@
-\contentsline {part}{第一部分\hspace {1em}算法原理}{2}{part.1}
-\contentsline {section}{\numberline {1}用\emph {拉格朗日插值多项式}来逼近被积函数}{2}{section.1}
-\contentsline {section}{\numberline {2}构造插值求积公式}{2}{section.2}
-\contentsline {section}{\numberline {3}从\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Newton-Cotes\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 积分到\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces Gauss\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 积分}{3}{section.3}
-\contentsline {part}{第二部分\hspace {1em}算法构建}{3}{part.2}

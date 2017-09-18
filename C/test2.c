@@ -86,14 +86,10 @@ int main()
 
     for (i = 0; i < n; i++ ) {
         Roots[i] = cos( PI * ( i + 1 - 0.25 ) / ( n + 0.5 ) );
-        j = 0;
-        while (j <= 100) {
-            root_temp = Roots[i] - poly_value( Lege , Roots[i] ) / poly_value( Lege_D , Roots[i] );
-            if ( ( Roots[i] - root_temp ) > 0.000000001 )
-                Roots[i] = root_temp;
-            else
-                break;
-            j++;
+        root_temp = 0;
+        while (root_temp != Roots[i]) {
+            root_temp = Roots[i];
+            Roots[i] = Roots[i] - poly_value( Lege , Roots[i] ) / poly_value( Lege_D , Roots[i] );
         }
     }
 

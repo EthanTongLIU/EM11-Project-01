@@ -1,7 +1,7 @@
-\documentclass[UTF8, 11pt, a4paper]{ctexart}
+\documentclass[UTF8, 12pt, a4paper]{ctexart}
 
 \usepackage{CJK}
-\usepackage{amsmath, amssymb, amsfonts, array, ntheorem} % <-- 数学宏包, 数学样式
+\usepackage{amsmath, amssymb, amsfonts, array} % <-- 数学宏包, 数学样式
 \usepackage{times}\usepackage{mathptmx}
 \usepackage{latexsym} % <-- 符号
 \usepackage{graphicx} % <-- 颜色和图形, 增强图形支持，文本旋转和缩放
@@ -19,9 +19,9 @@
 % ===============================
 %  ----- 以下设置定理环境 -----
 % ===============================
-\newtheorem*{lemm}{引理}
-\newtheorem*{defi}{定义}
-\newtheorem*{theo}{定理}
+\newtheorem*{lemma}{引理} 
+\newtheorem*{definition}{定义} 
+\newtheorem*{theo}{定理} 
 
 % ===============================
 %  ----- 以下设置链接样式 -----
@@ -78,10 +78,10 @@ $ f $ 的 $ n $ 次插值多项式。
 \begin{align*}
   \left\{
   \begin{array}{rcl}
-a_0 + a_1 x_0 ~+ & \cdots & + ~a_n x_0^n = y_0 \\
-a_0 + a_1 x_1 ~+ & \cdots & + ~a_n x_1^n = y_1 \\
+a_0 + a_1 x_0 + & \cdots & + a_n x_0^n = y_0 \\
+a_0 + a_1 x_1 + & \cdots & + a_n x_1^n = y_1 \\
                 & \cdots & \\
-a_0 + a_1 x_n ~+ & \cdots & + ~a_n x_n^n = y_n
+a_0 + a_1 x_n + & \cdots & + a_n x_n^n = y_n
   \end{array} \right.
 \end{align*}
 
@@ -105,9 +105,7 @@ l_i(x_k) = \left\{
 \end{array} \right.
 \end{equation*}
 \begin{equation}
-l_{i}(x) = \dfrac{ (x-x_0)\cdots(x-x_{i-1})(x-x_{i+1})\cdots(x_i-x_n) }{ (x_i-x_0)
-\cdots(x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n) } = \prod _{j=0,j \neq i}^{n}
-\dfrac{x-x_i}{x_i-x_j}
+l_{i}(x) = \dfrac{ (x-x_0)\cdots(x-x_{i-1})(x-x_{i+1})\cdots(x_i-x_n) }{ (x_i-x_0)\cdots(x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n) } = \prod _{j=0,j \neq i}^{n} \dfrac{x-x_i}{x_i-x_j}
 \end{equation}
 
 式\eqref{eq:1}即为$n$次插值多项式。
@@ -117,65 +115,17 @@ l_{i}(x) = \dfrac{ (x-x_0)\cdots(x-x_{i-1})(x-x_{i+1})\cdots(x_i-x_n) }{ (x_i-x_
 对式\eqref{eq:1}两边积分，以构造插值求积公式：
 \begin{equation}
 \boxed{
-\int _a^b f(x)dx \approx \int _a^b L_n(x)dx = \int_a^b \sum \limits _{i=0}^n
-y_il_i(x)dx = \sum_{i=0}^n\left[ \int_a^b l_i (x) dx \right]y_i = \sum \limits
-_{i=0}^{n}A_{k}y_i
+\int _a^b f(x)dx \approx \int _a^b L_n(x)dx = \int_a^b \sum \limits _{i=0}^n y_il_i(x)dx = \sum_{i=0}^n\left[ \int_a^b l_i (x) dx \right]y_i = \sum \limits _{i=0}^{n}A_{k}y_i
 }
-\label{eq:3}
 \end{equation}
 其中，
 \begin{equation}
-A_k = \int_a^b l_i (x) dx = \int_a^b \dfrac{ (x-x_0)\cdots(x-x_{i-1})(x-x_{i+1})
-\cdots(x_i-x_n) }{ (x_i-x_0)\cdots(x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n) }dx
-\label{eq:4}
+A_k = \int_a^b l_i (x) dx = \int_a^b \dfrac{ (x-x_0)\cdots(x-x_{i-1})(x-x_{i+1})\cdots(x_i-x_n) }{ (x_i-x_0)\cdots(x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n) }dx
 \end{equation}
 就是插值求积公式的系数。
-\section{从~\emph{Newton-Cotes}~积分到~\emph{Gauss}~积分}
+\section{从~Newton-Cotes~积分到~Gauss~积分}
 由前面的介绍可以看出，插值积分公式最后的求积结果只和积分区间上节点的选取有关，那么如何选
 取这些节点可以达到最好的效果呢？
-\begin{defi}
-若求积公式 $ \int _{a}^{b}f(x)dx \approx \sum \limits _{k=0}^{n} A_k f(x_k) $ 对
-一切不高于 $ m $ 次的多项式 $ P $ 都取严格等号，即余项为0；而对于某个 $ m+1 $ 次多项式
-等号不成立，则称此求积公式的代数精度为 $ m $。
-\end{defi}
-\begin{theo}
-设节点 $ x_0, x_1, \cdots , x_n \in [a,b] $，则求积公式
-$$ \int_a^b f(x) dx \approx \sum \limits _{k=0}^{n} A_k f(x_k) $$
-的代数精度最高为 $ 2n+1 $ 次。
-\end{theo}
-
-\subsection{\emph{Newton-Cotes}~积分}
-如果对于上述求积公式，在选取 $ \{ (x_i,y_i) \}_{i\in[0,n]} $ 这 $ n+1 $ 个点的时候，
-在区间 $ [a,b] $ 上是等分的，就称之为 \emph{Newton-Cotes} 求积公式。
-
-将区间 $ [a,b] n $ 等分，取分点 $ x_i = a + ih ( h = \dfrac{ b-a }{ n },i=0,1,\cdots,n ) $，
-并且令 $ x = a+th $，则对 $ A_k $ 的表达式 \eqref{eq:4} 做变量替换有：
-\begin{equation}
-A_k = h \int _0^n \dfrac{ t(t-1)\cdots(t-i+1)(t-i-1)\cdots(t-n) }{ i!(-1)^{n-i}(n-i)! } dt
-\label{eq:5}
-\end{equation}
-这就是 \emph{Newton-Cotes} 求积公式的系数。
-
-\emph{Newton-Cotes} 积分的代数精度为： $ n $，若 $ n $ 为奇数；$ n+1 $，若 $ n $ 为偶数。
-
-\subsection{\emph{Guass}~积分}
-为了达到理论最高代数精度 $ 2n+1 $，需要适当选择节点，以此构造出的求积公式称为\emph{Guass}求积公式。
-\begin{defi}
-使求积公式 $ \int_a^b f(x) dx \approx \sum \limits _{k=0}^{n} A_k f(x_k) $ 达到最
-高代数精度 $ 2n+1 $ 的求积公式称为 \emph{Guass} 求积公式。
-\end{defi}
-
-\subsubsection{用待定系数法构造 \emph{Guass}~求积公式 }
-\subsubsection{用正交多项式构造 \emph{Guass}~求积公式 }
-
-\subparagraph{ \emph{Guass-Legendre} 公式}
-
-\subparagraph{ \emph{Guass-Chebyshev} 公式}
-
-\subparagraph{ \emph{Guass-Laguerre} 公式}
-
-\subparagraph{ \emph{Guass-Hermite} 公式}
-
 
 \part{算法构建}
 
