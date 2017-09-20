@@ -38,10 +38,10 @@ int main()
     for ( i = 0; i <= n; i++ ) {
         p[i] = ( double* )malloc( sizeof( double ) * ( n + 1 ) );
     }
-    Lege = ( double* )malloc( sizeof( double* ) * ( n + 1 ) ); //勒让德多项式
-    Lege_D = ( double* )malloc( sizeof( double* ) * ( n + 1 ) ); //勒让德多项式的导多项式
-    Roots = ( double* )malloc( sizeof( double* ) * n ); //勒让德多项式的根
-    int_coefs = ( double* )malloc( sizeof( double* ) * n ); //插值积分多项式的系数
+    Lege = ( double* )malloc( sizeof( double ) * ( n + 1 ) ); //勒让德多项式
+    Lege_D = ( double* )malloc( sizeof( double ) * ( n + 1 ) ); //勒让德多项式的导多项式
+    Roots = ( double* )malloc( sizeof(double) * n ); //勒让德多项式的根
+    int_coefs = ( double* )malloc( sizeof(double) * n ); //插值积分多项式的系数
 
     for (i = 0; i <= n; i++){
         for (j = 0; j <= n; j++){
@@ -90,7 +90,7 @@ int main()
         j = 0;
         while (j <= 100) {
             root_temp = Roots[i] - poly_value( Lege , Roots[i] ) / poly_value( Lege_D , Roots[i] );
-            if ( ( Roots[i] - root_temp ) > 0.000001 )
+            if ( fabs( Roots[i] - root_temp ) > 0.000001 )
                 Roots[i] = root_temp;
             else
                 break;
